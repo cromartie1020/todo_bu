@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Todo List{% endblock %}
+{% block content %}
+  <h2>Todo List</h2>
+  {% if todos %}
+    <p>You have {{ todos|length }} todo items. <a href="{% url 'todo_create' %}">Enter a new todo item.</a></p> 
+  {% else %}
+    <p>You have no todo items.</p>
+  {% endif %}
+  <ul>
+    {% for todo in todos %}
+      <li>{{ todo.new_todo }} - {{ todo.author.username }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

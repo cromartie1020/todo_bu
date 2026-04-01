@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Update Todo{% endblock %}
+{% block content %}
+  <h2>Update Todo</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="new_todo">Todo:</label>
+    <input type="text" id="new_todo" name="new_todo" value="{{ todo.new_todo }}">
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}
