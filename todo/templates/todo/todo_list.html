@@ -2,15 +2,43 @@
 {% load static %}
 {% block title %}Todo List{% endblock %}
 {% block content %}
-  <h2>Todo List</h2>
-  {% if todos %}
-    <p>You have {{ todos|length }} todo items. <a href="{% url 'todo_create' %}">Enter a new todo item.</a></p> 
-  {% else %}
-    <p>You have no todo items.</p>
-  {% endif %}
-  <ul>
-    {% for todo in todos %}
-      <li>{{ todo.new_todo }} - {{ todo.author.username }}</li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <div class="row">
+
+        <div class='col-sm' >
+      
+          <div class='todo_box'>
+            
+              Enter a new todo item.
+              <a href="{% url 'todo_create' %}">
+                   <button type='submit' class='btn btn-success btn-sm float-end'>Enter</button>
+              </a>
+           </div>
+          
+          <div class='todo_box'>
+            {% for todo in todos %}  
+              <li>
+               
+                 {{ todo|title }} 
+                 <a href ="{% url 'todo_delete' todo.id %}">
+
+                  <button class='btn btn-danger btn-sm float-end ml-2' type='submit' value="Delete">Delete</button>
+                 </a>
+                 <a href="{% url 'todo_update' todo.id %}">
+                   <button class='btn btn-info btn-sm    float-end' type='submit' value="Update">Update</button>
+                 </a>
+                 <hr/>               
+          
+              </li>
+            {% endfor %}  
+              
+           </div> 
+          
+        </div> 
+
+
+    </div>
+        
+</div>
+
 {% endblock %}
