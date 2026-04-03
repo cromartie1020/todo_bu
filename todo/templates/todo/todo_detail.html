@@ -2,10 +2,12 @@
 {% load static %}
 {% block title %}Todo Detail{% endblock %}
 {% block content %}
-  <h2>Todo Detail</h2>
-  <p>{{ todo.new_todo }}</p>
-  <p>Author: {{ todo.author }}</p>
-  <a href="{% url 'todo_update' pk=todo.pk %}">Edit</a>
-  <a href="{% url 'todo_delete' pk=todo.pk %}">Delete</a>
+  <div>
+    <h2>Todo Detail</h2>
+    <p>{{ todo.new_todo }}</p>
+    <p>Author: {{ todo.author }}</p>
+    <a href="{% url 'todo_update' pk=todo.pk %}">Edit</a>
+    <a href="{% url 'todo_delete' pk=todo.pk %}">Delete</a>
+  </div>
 {% endblock %}
     
