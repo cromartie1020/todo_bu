@@ -45,7 +45,8 @@ def todo_update(request,pk):
         form=Todo_ListForm(request.POST, instance=todo)
         if form.is_valid:
             form.save()
-            return redirect('todo_detail', pk=todo.pk)
+            #return redirect('todo_detail', pk=todo.pk)
+            return redirect('todo_list')
     
         
     return render (request,'todo/todo_update.html',{'form':form,'todo':todo}) 
