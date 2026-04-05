@@ -2,6 +2,8 @@
 {% load static %}
 {% block title %}Todo Detail{% endblock %}
 {% block content %}
+ <div class="row">
+
   <div class="todo-box">
     <h2>Todo Detail</h2>
     <p>{{ todo.new_todo }}</p>
@@ -9,5 +11,6 @@
     <a href="{% url 'todo_update' pk=todo.pk %}">Edit</a>
     <a href="{% url 'todo_delete' pk=todo.pk %}">Delete</a>
   </div>
+ </div> 
 {% endblock %}
     
