@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Create Todo{% endblock %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block title %}{% trans "Create Todo" %}{% endblock %}
 {% block content %}
-  <h2>Create Todo</h2>
+  <h2>{% trans "Create Todo" %}</h2>
   <form method="POST">
     {% csrf_token %}
-    <label for="new_todo">Todo:</label>
-    <input type="text" id="new_todo" name="new_todo">
-    <button type="submit">Create</button>
+    {{ form|crispy }}
+    <button type="submit">{% trans "Create" %}</button>
   </form>
 {% endblock %}
