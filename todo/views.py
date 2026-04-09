@@ -27,7 +27,9 @@ def todo_create(request):
         author = request.user
         Todo_List.objects.create(new_todo=new_todo, author=author)
         return redirect('todo_list')
-    return render(request, 'todo/todo_create.html')
+    form=Todo_ListForm()
+    context={'form':form}
+    return render(request, 'todo/todo_create.html', context)
 '''
 def todo_update(request, pk):
     todo = get_object_or_404(Todo_List, pk=pk)
