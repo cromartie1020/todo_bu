@@ -20,9 +20,7 @@
               <li>
                
                  <a href="{% url 'todo_detail' todo.id %}">{{ todo|title }}</a> 
-                 <a href="{% url 'todo_create' %}">
-                    <button class='btn btn-success btn-sm float-end' type='submit' value="Create">Create</button>
-                 </a>
+                 
                  <a href ="{% url 'todo_delete' todo.id %}">
 
                   <button class='btn btn-danger btn-sm float-end ml-2' type='submit' value="Delete">Delete</button>
