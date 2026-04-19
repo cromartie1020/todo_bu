@@ -60,3 +60,24 @@ def todo_delete(request, pk):
         return redirect('todo_list')
     context = {'todo': todo}
     return render(request, 'todo/todo_delete.html', context)    
+'''
+from tkinter import *
+tk = Tk()
+tk.title('Todo List')
+tk.geometry('400x400')
+label = Label(tk, text='Todo List', font=('Arial', 20))
+label.pack(pady=10)
+entry = Entry(tk, width=30)
+entry.pack(pady=10)
+def add_todo():
+    todo = entry.get()
+    if todo:
+        listbox.insert(END, todo)
+        entry.delete(0, END)
+button = Button(tk, text='Add Todo', command=add_todo)
+button.pack(pady=10)
+listbox = Listbox(tk, width=30)
+listbox.pack(pady=10)
+
+---+tk.mainloop()   
+'''        
